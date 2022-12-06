@@ -18,18 +18,20 @@ package tests.api.user;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import tests.BaseTest;
+import utils.JunitExecutionListener;
 
 import static client.transport.querymap.LoginUserQueryMap.BO;
 
 @DisplayName("User login")
+@ExtendWith(JunitExecutionListener.class)
 public class UserTests extends BaseTest {
 
     @Test
     @DisplayName("Successful login")
     public void test1640068360491() {
         USER_API.authenticateUser(BO);
-
 
     }
 }

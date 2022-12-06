@@ -27,11 +27,11 @@ import static veslo.client.request.QueryParameterNullValueRule.RULE_IGNORE;
 
 @Getter
 @Setter
-@Accessors(chain = true, fluent = true)
+@Accessors(chain = true)
 // for example
 @QueryMapParameterRules(nullRule = RULE_IGNORE, caseRule = CAMEL_CASE)
 public class LoginUserQueryMap extends ReflectQueryMap {
     private Object username;
     private Object password;
-    public static final LoginUserQueryMap BO = new LoginUserQueryMap().username("osyanin").password("1357924680");
+    public static final LoginUserQueryMap BO = new LoginUserQueryMap().setUsername("osyanin").setPassword("");
 }

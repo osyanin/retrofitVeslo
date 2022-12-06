@@ -11,7 +11,7 @@ import veslo.JacksonConverterFactory;
 import static veslo.client.TrustSocketHelper.*;
 
 public abstract class BaseTest {
-    private static final String URL = System.getProperty("service_url", "https://someurl.ok");
+    private static final String URL = System.getProperty("service_url", "");
 
     protected static final UserApi USER_API = createJacksonClient(UserApi.class);
 
@@ -33,8 +33,8 @@ public abstract class BaseTest {
                 .create(clientClass);
     }
 
-    @BeforeEach
+    /*@BeforeEach
     public void logout() {
         USER_API.logout();
-    }
+    }*/
 }

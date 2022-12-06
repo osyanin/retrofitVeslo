@@ -38,7 +38,8 @@ dependencies {
     testImplementation "org.apache.logging.log4j:log4j-slf4j-impl:${slf4jVersion}"
     testImplementation("io.qameta.allure:allure-junit5-assert:${allureVersion}")
     testImplementation("io.qameta.allure:allure-junit5:${allureVersion}")
-    testImplementation "org.projectlombok:lombok:1.18.22"
+    testCompileOnly "org.projectlombok:lombok:1.18.24"
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
     testImplementation "org.assertj:assertj-core:3.22.0"
 }
 

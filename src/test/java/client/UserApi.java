@@ -9,11 +9,11 @@ import retrofit2.http.*;
 import veslo.AResponse;
 
 public interface UserApi {
-    @GET("/user/auth/login")
+    @POST("user/auth/login")
     @Description("Logs user into the system")
     AResponse<Status, Status> loginUser(@Query("username") Object username, @Query("password") Object password);
 
-    @GET("/user/auth/login")
+    @POST("user/auth/login")
     @Description("Logs user into the system")
     AResponse<Status, Status> loginUser(@QueryMap() LoginUserQueryMap queryMap);
 
@@ -30,9 +30,7 @@ public interface UserApi {
     @Description("Get user by user name")
     AResponse<User, Status> getUserByName(@Path("username") Object username);
 
-
-
-    @GET("/user/auth/logout")
+    @GET("user/auth/logout")
     @Description("Logs out current logged in user session")
     AResponse<Status, Status> logoutUser();
 

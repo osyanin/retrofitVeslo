@@ -32,7 +32,11 @@ public class AuthAction implements RequestInterceptAction {
     public Request requestAction(@Nonnull Request request) {
         final String token = TOKEN.get();
         if (token != null) {
-            final Headers headers = request.headers().newBuilder().add("api_key", token).build();
+            final Headers headers = request
+                    .headers().newBuilder()
+                    .add("api_key", token)
+                    .add("Fingerprint", "user fingerprint")
+                    .build();
             return request.newBuilder().headers(headers).build();
         }
         return request;
